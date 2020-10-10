@@ -1,7 +1,7 @@
 # AutoTest
 
 ## What this does
-AutoTest is a tool which automatically tests your program, like a small progtest.
+AutoTest is a tool which automatically tests your program, it may help you discover some basic bugs before sending your program to progtest.
 Currently it supports:
 - Compiler errors and warnings
 - Sample data testing
