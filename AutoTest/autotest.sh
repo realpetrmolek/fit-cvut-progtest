@@ -72,7 +72,7 @@ done
 ((failed=total-failed))
 echo "[AutoTest] ($failed/$total) samples produced expected results."
 
-#Radamsa
+# Radamsa
 echo "[AutoTest] Trying random data..."
 total=0
 failed=0
