@@ -3,6 +3,7 @@
 FUZZ_COUNT=100
 
 BASEDIR=$(dirname "$0")
+cd "$BASEDIR"
 
 RADAMSA_GIT="https://gitlab.com/akihe/radamsa.git"
 RADAMSA_BIN="${BASEDIR}/radamsa/bin/radamsa"
@@ -19,7 +20,7 @@ function header(){
   / /\ \| | | | __/ _ \| |/ _ \/ __| __|
  / ____ \ |_| | || (_) | |  __/\__ \ |_ 
 /_/    \_\__,_|\__\___/|_|\___||___/\__|
-                        v1 by Petr Molek
+                    v1.0.1 by Petr Molek
 
 "
 }
@@ -52,7 +53,7 @@ if ! g++ -std=c++14 -Wall -pedantic -Wno-long-long -O2 -c -o autotest/program.ou
     echo "[AutoTest] COMPILER ERROR/WARNING"
     exit 1
 fi
-gcc -Wall -pedantic -g -o autotest/program.out $sourcecode
+gcc -Wall -pedantic -g -o autotest/program.out $sourcecode -lm
 echo "[AutoTest] Compilation successfull!"
 
 # Sample data
@@ -72,7 +73,7 @@ done
 ((failed=total-failed))
 echo "[AutoTest] ($failed/$total) samples produced expected results."
 
-# Radamsa
+#Radamsa
 echo "[AutoTest] Trying random data..."
 total=0
 failed=0
